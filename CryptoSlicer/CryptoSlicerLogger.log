@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T18:04:17</date>
+  <millis>1572300257271</millis>
+  <sequence>0</sequence>
+  <logger>CryptoSlicerLogger</logger>
+  <level>INFO</level>
+  <class>slicing.SlicingEngine</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Analyzing /home/ya/myGithub/CryptoSlicer/testApp/BUSINESS/com.app_tw002.layout.apk:</message>
+</record>
+</log>
