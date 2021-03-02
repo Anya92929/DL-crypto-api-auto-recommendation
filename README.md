@@ -13,7 +13,7 @@ The directory deep_Learning_experiments includes our code for API recommendtatio
 ## Comparison with Codota
 We compare our approach with the state-of-the-art code completion plugin Codota. We manually collect 245 test cases by decompiling 9 Android apps and locating the cryptographic API method invocations in the codebase. The decompiled java source code can be found [here](https://github.com/Anya92929/DL-crypto-api-auto-recommendation/tree/main/Comparison_with_Codota)
 The test cases can be found by searching the keywords "CRYPTOGRAPHIC API CALLSITE". An example is as follows:
-![](Comparison_with_Codota/testcase_example.png =250x)
+<img src="Comparison_with_Codota/testcase_example.png" alt="example" width="200"/>
 
 ## Data
 The data is [here](https://drive.google.com/drive/folders/1fc3A3ORcVJUDcPsH2jVHadpgTkbTs8nt?usp=sharing) (preserves viewer anonymity).
