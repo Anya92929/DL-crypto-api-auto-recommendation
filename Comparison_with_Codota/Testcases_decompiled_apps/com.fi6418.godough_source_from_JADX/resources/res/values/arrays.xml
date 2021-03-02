@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="location_types">
+        <item>@string/tab_all</item>
+        <item>@string/tab_branches</item>
+        <item>@string/tab_atms</item>
+    </array>
+    <array name="mfa_answer_hints">
+        <item>answer one</item>
+        <item>answer two</item>
+        <item>answer three</item>
+    </array>
+    <array name="mfa_question_labels">
+        <item>Question One</item>
+        <item>Question Two</item>
+        <item>Question Three</item>
+    </array>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/frag_layout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <Spinner android:id="@+id/phonenumber_type_lbl" android:layout_width="wrap_content" android:layout_height="40dp" android:minWidth="130dp" android:text="@string/lbl_mobile" android:layout_alignParentLeft="true"/>
+    <com.jackhenry.godough.core.widgets.JhaEditText android:id="@+id/phoneNumberWatcher" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="3dp" android:layout_toLeftOf="@+id/extension_and_delete_zone" android:layout_toRightOf="@+id/phonenumber_type_lbl" android:layout_alignParentTop="true" android:inputType="number" style="@style/EditText.SingleLine.Text"/>
+    <RelativeLayout android:id="@+id/extension_zone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_toRightOf="@+id/phonenumber_type_lbl" android:layout_below="@+id/phoneNumberWatcher">
+        <ImageView android:id="@+id/phonenumber_hideextension" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_remove" android:scaleType="centerInside" android:layout_alignParentRight="true"/>
+        <com.jackhenry.godough.core.widgets.JhaEditText android:id="@+id/extension_edittext" android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginLeft="44dp" android:hint="@string/lbl_extension" android:maxLength="5" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:inputType="number" style="@style/EditText.SingleLine.Text"/>
+    </RelativeLayout>
+    <LinearLayout android:id="@+id/extension_and_delete_zone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+        <ImageView android:id="@+id/phonenumber_showextension" android:padding="10dp" android:visibility="invisible" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ex_button" android:scaleType="centerInside"/>
+        <ImageView android:id="@+id/phonenumber_delete" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_remove" android:scaleType="centerInside"/>
+    </LinearLayout>
+</RelativeLayout>

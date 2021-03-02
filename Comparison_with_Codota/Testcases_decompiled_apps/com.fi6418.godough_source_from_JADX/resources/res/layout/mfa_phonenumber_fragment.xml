@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@drawable/app_background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:id="@+id/scroll_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@+id/button_bar" android:layout_alignParentTop="true" style="@style/ScrollView">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_alignParentTop="true">
+            <TextView android:gravity="center" android:id="@+id/mfatitle" android:background="@drawable/list_item_first" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/mfa_add_phone_title" android:layout_alignParentTop="true" style="@style/Text.Medium"/>
+            <LinearLayout android:orientation="vertical" android:id="@+id/phonenumber_entries_zone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/mfatitle">
+                <com.jackhenry.godough.core.login.MFAPhoneNumberEntry android:id="@+id/mfaPhone1" android:background="@drawable/list_item_shadow_overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <com.jackhenry.godough.core.login.MFAPhoneNumberEntry android:id="@+id/mfaPhone2" android:background="@drawable/list_item_shadow_overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <com.jackhenry.godough.core.login.MFAPhoneNumberEntry android:id="@+id/mfaPhone3" android:background="@drawable/list_item_shadow_overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <com.jackhenry.godough.core.login.MFAPhoneNumberEntry android:id="@+id/mfaPhone4" android:background="@drawable/list_item_shadow_overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <RelativeLayout android:id="@+id/add_phonenumber_zone" android:background="@drawable/list_item_last_shadow_overlay" android:paddingLeft="15dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/phonenumber_entries_zone">
+                <TextView android:gravity="center" android:layout_width="wrap_content" android:layout_height="40dp" android:text="@string/lbl_add_phone" style="@style/Text.Medium"/>
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_add" android:scaleType="centerInside" android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_back" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_back" app:buttonIcon="@android:color/transparent"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_submit" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="0dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_submit" app:buttonIcon="@drawable/btn_icon_checkmark" app:buttonEnabled="false" app:buttonThemed="true"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:id="@+id/scroll_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@+id/button_bar" android:layout_alignParentTop="true" style="@style/ScrollView">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@+id/city_panel" android:background="@drawable/list_item_first_shadow_overlay" android:paddingTop="15dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <TextView android:gravity="center_vertical" android:id="@+id/city_label" android:paddingLeft="8dp" android:paddingRight="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbl_city" android:layout_alignTop="@+id/city_edit" android:layout_alignBottom="@+id/city_edit" style="@style/Text.Medium"/>
+                <EditText android:id="@+id/city_edit" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginRight="8dp" android:hint="@string/lbl_city" android:layout_toRightOf="@+id/city_label" android:layout_alignParentRight="true" style="@style/EditText.SingleLine.Text"/>
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/state_panel" android:background="@drawable/list_item_last" android:paddingLeft="15dp" android:paddingTop="10dp" android:paddingRight="15dp" android:paddingBottom="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/city_panel">
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/state_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_state" android:layout_toLeftOf="@+id/arrow_button" style="@style/Text.Medium"/>
+                <TextView android:textColor="@color/tapTextViewColor" android:ellipsize="end" android:gravity="bottom" android:id="@+id/state" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tap_select_state" android:singleLine="true" android:layout_toLeftOf="@+id/arrow_button" android:layout_below="@+id/state_label" style="@style/Text.Large.Bold.Indented"/>
+                <ImageView android:id="@+id/arrow_button" android:layout_height="wrap_content" android:layout_alignTop="@+id/state_label" android:layout_alignBottom="@+id/state" android:layout_alignParentRight="true" style="@style/Arrow.Circled"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_cancel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_cancel" app:buttonIcon="@drawable/btn_icon_stop"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_search" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="0dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_search" app:buttonIcon="@drawable/btn_icon_search" app:buttonThemed="true"/>
+    </LinearLayout>
+</RelativeLayout>

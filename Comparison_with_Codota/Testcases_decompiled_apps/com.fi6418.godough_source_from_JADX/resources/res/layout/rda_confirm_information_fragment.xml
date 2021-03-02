@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@drawable/app_background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:id="@+id/scroll_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@+id/button_bar" android:layout_alignParentTop="true" style="@style/ScrollView">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:background="@drawable/list_item_first_shadow_overlay" android:paddingLeft="15dp" android:paddingTop="15dp" android:paddingRight="15dp" android:paddingBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/lbl_first_name" android:paddingLeft="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_first_name" style="@style/Text.Medium"/>
+                <EditText android:id="@+id/edtFirstName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/lbl_first_name" style="@style/EditText"/>
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/list_item_shadow_overlay" android:paddingLeft="15dp" android:paddingTop="8dp" android:paddingRight="15dp" android:paddingBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/lbl_last_name" android:paddingLeft="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_last_name" style="@style/Text.Medium"/>
+                <EditText android:id="@+id/edtLastName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/lbl_last_name" style="@style/EditText"/>
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/list_item_shadow_overlay" android:paddingLeft="15dp" android:paddingTop="8dp" android:paddingRight="15dp" android:paddingBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/lbl_email" android:paddingLeft="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_email" style="@style/Text.Medium"/>
+                <EditText android:id="@+id/edtEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/lbl_email" android:inputType="textEmailAddress" style="@style/EditText"/>
+            </RelativeLayout>
+            <RelativeLayout android:background="@drawable/list_item_shadow_overlay" android:paddingLeft="15dp" android:paddingTop="8dp" android:paddingRight="15dp" android:paddingBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/lbl_confirm_email" android:paddingLeft="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/email_address_title" style="@style/Text.Medium"/>
+                <EditText android:id="@+id/edtConfirmEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/lbl_confirm_email" android:inputType="textEmailAddress" style="@style/EditText"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_cancel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_cancel" app:buttonIcon="@drawable/btn_icon_stop"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_continue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="0dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_continue" app:buttonIcon="@drawable/btn_icon_checkmark" app:buttonEnabled="false" app:buttonThemed="true"/>
+    </LinearLayout>
+</RelativeLayout>

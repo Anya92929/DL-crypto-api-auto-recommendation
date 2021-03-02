@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cameraImageCapture" android:background="@android:color/black" android:layout_width="match_parent" android:layout_height="match_parent" android:weightSum="100">
+    <ImageView android:id="@+id/btnTakePicture" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="6dp" android:src="@drawable/btn_default_disabled_holo_dark" android:contentDescription="@string/take_picture"/>
+</LinearLayout>

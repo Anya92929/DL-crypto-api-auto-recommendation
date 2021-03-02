@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView android:textStyle="bold" android:gravity="center_horizontal" android:id="@+id/submitted" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:text="@string/title_transfer_submitted"/>
+    <TableLayout android:id="@+id/table" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:shrinkColumns="1">
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+            <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_confirmation"/>
+            <TextView android:textStyle="bold" android:ellipsize="end" android:id="@+id/confirm_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/number_sample" android:singleLine="true"/>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+            <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_transfer_from"/>
+            <TextView android:textStyle="bold" android:id="@+id/transfer_from" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/place_holder"/>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+            <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_transfer_to"/>
+            <TextView android:textStyle="bold" android:id="@+id/transfer_to" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/place_holder"/>
+        </TableRow>
+        <TableRow android:id="@+id/type_row" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+            <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_type"/>
+            <TextView android:textStyle="bold" android:id="@+id/transfer_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/place_holder"/>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+            <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_amount"/>
+            <TextView android:textStyle="bold" android:id="@+id/amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/place_holder"/>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+            <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_transfer_date"/>
+            <TextView android:textStyle="bold" android:id="@+id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/amount_sample"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

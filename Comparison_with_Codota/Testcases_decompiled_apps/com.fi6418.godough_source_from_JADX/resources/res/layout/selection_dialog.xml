@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView android:ellipsize="end" android:id="@+id/title" android:padding="15dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Select Something" android:maxLines="1" android:singleLine="true" style="@style/Text.Large.ICS"/>
+    <View android:gravity="fill_horizontal" android:id="@+id/titleDivider" android:background="@color/holo_blue_light" android:layout_width="match_parent" android:layout_height="2dp"/>
+    <FrameLayout android:id="@+id/content_frame" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+        <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Widget.AppCompat.ListView.DropDown"/>
+    </FrameLayout>
+    <View android:gravity="fill_horizontal" android:id="@+id/footerDivider" android:background="@color/holo_blue_light" android:visibility="gone" android:layout_width="match_parent" android:layout_height="2dp"/>
+    <FrameLayout android:layout_gravity="bottom" android:id="@+id/footer_frame" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

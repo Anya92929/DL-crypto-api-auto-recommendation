@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/color_layer">
+        <color android:color="@color/fiColorMain"/>
+    </item>
+    <item android:drawable="@drawable/menu_texture"/>
+</layer-list>

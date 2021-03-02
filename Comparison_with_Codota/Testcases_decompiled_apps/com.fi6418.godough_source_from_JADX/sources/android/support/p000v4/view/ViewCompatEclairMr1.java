@@ -1,0 +1,43 @@
+package android.support.p000v4.view;
+
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+/* renamed from: android.support.v4.view.ViewCompatEclairMr1 */
+class ViewCompatEclairMr1 {
+    public static final String TAG = "ViewCompat";
+
+    /* renamed from: a */
+    private static Method f1253a;
+
+    ViewCompatEclairMr1() {
+    }
+
+    public static boolean isOpaque(View view) {
+        return view.isOpaque();
+    }
+
+    public static void setChildrenDrawingOrderEnabled(ViewGroup viewGroup, boolean z) {
+        if (f1253a == null) {
+            Class<ViewGroup> cls = ViewGroup.class;
+            try {
+                f1253a = cls.getDeclaredMethod("setChildrenDrawingOrderEnabled", new Class[]{Boolean.TYPE});
+            } catch (NoSuchMethodException e) {
+                Log.e(TAG, "Unable to find childrenDrawingOrderEnabled", e);
+            }
+            f1253a.setAccessible(true);
+        }
+        try {
+            f1253a.invoke(viewGroup, new Object[]{Boolean.valueOf(z)});
+        } catch (IllegalAccessException e2) {
+            Log.e(TAG, "Unable to invoke childrenDrawingOrderEnabled", e2);
+        } catch (IllegalArgumentException e3) {
+            Log.e(TAG, "Unable to invoke childrenDrawingOrderEnabled", e3);
+        } catch (InvocationTargetException e4) {
+            Log.e(TAG, "Unable to invoke childrenDrawingOrderEnabled", e4);
+        }
+    }
+}

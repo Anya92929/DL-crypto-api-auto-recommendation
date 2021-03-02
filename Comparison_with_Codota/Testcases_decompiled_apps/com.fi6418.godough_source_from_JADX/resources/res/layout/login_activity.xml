@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/layout" android:background="@drawable/app_background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <fragment android:id="@+id/dummy" android:layout_width="wrap_content" android:layout_height="wrap_content" class="com.jackhenry.godough.core.DummyFragment"/>
+    <ScrollView android:id="@+id/scroll_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@+id/button_bar" android:layout_alignParentTop="true" style="@style/ScrollView">
+        <LinearLayout android:orientation="vertical" android:id="@+id/form_panel" android:background="@drawable/list_item_single_shadow_overlay" android:paddingLeft="20dp" android:paddingTop="15dp" android:paddingRight="20dp" android:paddingBottom="25dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/txtUserId" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="@string/user_id"/>
+            <com.jackhenry.godough.core.widgets.JhaEditText android:id="@+id/etxtUserId" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/EditText"/>
+            <TextView android:id="@+id/txtPwd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="10dp" android:text="@string/password"/>
+            <com.jackhenry.godough.core.widgets.JhaEditText android:id="@+id/etxtPwd" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" android:imeOptions="actionGo" style="@style/EditText"/>
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:id="@+id/remember_me_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="@string/remember_me_label" android:layout_alignParentLeft="true" android:layout_centerInParent="true"/>
+                <ImageView android:id="@+id/remember_mem_btn_info" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_info_small" android:scaleType="centerInside" android:layout_toRightOf="@+id/remember_me_label"/>
+                <Switch android:id="@+id/remember_me_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_cancel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_cancel" app:buttonIcon="@drawable/btn_icon_stop"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_login" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="0dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_login" app:buttonIcon="@drawable/btn_icon_key" app:buttonEnabled="false" app:buttonThemed="true"/>
+    </LinearLayout>
+</RelativeLayout>

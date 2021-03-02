@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include android:layout_above="@+id/button_bar" android:layout_alignParentTop="true" layout="@layout/header_message_table"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_view_check" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_view_check" app:buttonIcon="@drawable/btn_icon_eye"/>
+    </LinearLayout>
+</RelativeLayout>

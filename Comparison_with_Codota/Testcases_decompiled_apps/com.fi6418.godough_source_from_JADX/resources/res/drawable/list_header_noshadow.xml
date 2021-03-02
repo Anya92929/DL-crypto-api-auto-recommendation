@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/color_layer" android:drawable="@drawable/list_header_color"/>
+    <item android:id="@+id/gradient_layer" android:drawable="@drawable/list_header_gradient"/>
+    <item android:id="@+id/overlay_layer" android:drawable="@drawable/list_header_overlay"/>
+</layer-list>

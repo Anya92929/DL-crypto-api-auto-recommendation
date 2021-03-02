@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:id="@+id/scroll_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@+id/button_bar" android:layout_alignParentTop="true" style="@style/ScrollView">
+        <RelativeLayout android:id="@+id/search_panel" android:background="@drawable/list_item_single_shadow_overlay" android:paddingLeft="20dp" android:paddingTop="16dp" android:paddingRight="15dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+            <TextView android:gravity="center_vertical" android:id="@+id/zip_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbl_zip_code" android:layout_alignTop="@+id/zip_edit" android:layout_alignBottom="@+id/zip_edit" style="@style/Text.Medium"/>
+            <EditText android:id="@+id/zip_edit" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:hint="@string/lbl_zip_code" android:maxLength="5" android:layout_toRightOf="@+id/zip_label" android:layout_alignParentRight="true" android:imeOptions="actionGo" style="@style/EditText.SingleLine.Number"/>
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_cancel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_cancel" app:buttonIcon="@drawable/btn_icon_stop"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_search" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="0dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_search" app:buttonIcon="@drawable/btn_icon_search" app:buttonThemed="true"/>
+    </LinearLayout>
+</RelativeLayout>

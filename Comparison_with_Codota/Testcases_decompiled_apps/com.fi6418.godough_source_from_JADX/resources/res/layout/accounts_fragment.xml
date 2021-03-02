@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.p003v7.widget.RecyclerView android:id="@+id/account_recycler_view" android:layout_width="match_parent" android:layout_height="match_parent" style="@style/ListView"/>
+    <TextView android:gravity="center" android:id="@android:id/empty" android:background="@drawable/list_item_single_shadow_overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/act_empty_msg"/>
+    <com.jackhenry.godough.core.widgets.ProgressBarIceCream android:id="@+id/progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/ProgressBar"/>
+</RelativeLayout>

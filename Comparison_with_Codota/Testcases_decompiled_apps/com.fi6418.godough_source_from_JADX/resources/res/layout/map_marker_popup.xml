@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/marker_top" android:background="@drawable/marker_top" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="-6dp">
+        <ImageView android:layout_gravity="center_vertical" android:id="@+id/icon" android:padding="3dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fi_icon"/>
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@+id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:layout_marginRight="6dp" android:layout_toRightOf="@+id/icon" android:layout_alignTop="@+id/icon" android:layout_alignBottom="@+id/icon">
+            <TextView android:textStyle="bold" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Title" style="@style/Text.Medium.White"/>
+            <TextView android:textSize="12sp" android:id="@+id/snippet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Snippet" style="@style/Text.Small.White"/>
+        </LinearLayout>
+        <ImageView android:layout_gravity="center_vertical" android:id="@+id/arrow_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9dp" android:layout_marginRight="15dp" android:src="@drawable/arrow" android:scaleType="centerInside"/>
+    </LinearLayout>
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/marker_arrow"/>
+</LinearLayout>

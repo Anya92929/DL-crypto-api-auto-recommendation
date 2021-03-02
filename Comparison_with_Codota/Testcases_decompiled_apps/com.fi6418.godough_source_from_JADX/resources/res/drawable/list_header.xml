@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/color_layer" android:drawable="@drawable/list_header_color" android:left="7dp" android:top="10dp" android:right="7dp" android:bottom="0dp"/>
+    <item android:id="@+id/overlay_layer" android:drawable="@drawable/list_header_shadow_overlay" android:left="0dp" android:top="0dp" android:right="0dp" android:bottom="0dp"/>
+</layer-list>

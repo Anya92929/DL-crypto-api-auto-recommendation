@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/cameraImagePreview" android:background="@color/checkOverlayBackground" android:layout_width="match_parent" android:layout_height="match_parent" android:baselineAligned="false">
+    <LinearLayout android:id="@+id/info_bar_bottom" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="10" android:layout_alignParentBottom="true">
+        <com.jackhenry.godough.core.widgets.ActionButton android:textColor="@color/white70" android:id="@+id/btnSavePicture" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="5" android:contentDescription="@string/btnUse" app:buttonText="@string/btnUse" app:buttonIcon="@drawable/btn_icon_checkmark"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:textColor="@color/white70" android:id="@+id/btnRetryPicture" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="5" android:contentDescription="@string/retry_picture" app:buttonText="@string/retry_picture" app:buttonIcon="@drawable/ic_menu_camera"/>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/info_bar_bottom">
+        <ImageView android:id="@+id/cameraImageView" android:layout_width="match_parent" android:layout_height="match_parent" android:contentDescription="@string/cameraPreviewImage"/>
+        <ImageView android:id="@+id/ivCheckOverlayBoxTitle" android:paddingTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/check_front" android:scaleType="center" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:contentDescription="@string/checkOverLayBorderDesc"/>
+    </RelativeLayout>
+</RelativeLayout>

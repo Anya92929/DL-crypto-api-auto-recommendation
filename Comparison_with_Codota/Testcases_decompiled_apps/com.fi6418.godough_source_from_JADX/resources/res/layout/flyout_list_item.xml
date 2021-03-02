@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="44dp">
+    <ImageView android:id="@+id/menuItemImage" android:padding="10dp" android:layout_width="42dp" android:layout_height="match_parent" android:src="@drawable/ic_accounts" style="@style/Text.Medium.Bold"/>
+    <TextView android:textColor="@color/white" android:gravity="center_vertical" android:id="@+id/buttonText" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/account" android:layout_toRightOf="@+id/menuItemImage" style="@style/Text.Medium"/>
+    <TextView android:gravity="center" android:id="@+id/buttonBadge" android:background="@drawable/alert_popout_color" android:paddingLeft="10dp" android:paddingTop="3dp" android:paddingRight="10dp" android:paddingBottom="3dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginTop="8dp" android:layout_marginRight="10dp" android:layout_marginBottom="8dp" android:text="22" android:lines="1" android:layout_alignParentRight="true" style="@style/AlertOverlayText"/>
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView android:gravity="center" android:id="@+id/header" android:paddingLeft="0dp" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Text.Large.Bold.ListHeader"/>
+    <ScrollView android:id="@+id/scroll_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/header" style="@style/ScrollView">
+        <LinearLayout android:orientation="vertical" android:id="@+id/btm_content" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@+id/row_panel" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:id="@+id/atm_branch_panel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:layout_marginTop="10dp" android:layout_marginBottom="5dp">
+                    <ImageView android:id="@+id/atm_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5dp" android:src="@drawable/ic_atm" android:layout_weight="0"/>
+                    <TextView android:id="@+id/atm_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_atm" android:layout_weight="0" style="@style/Text.Small"/>
+                    <ImageView android:id="@+id/branch_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5dp" android:src="@drawable/ic_branch" android:layout_weight="0"/>
+                    <TextView android:id="@+id/branch_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbl_branch" android:layout_weight="0" style="@style/Text.Small"/>
+                </LinearLayout>
+            </LinearLayout>
+            <RelativeLayout android:id="@+id/streetview_layout" android:layout_width="match_parent" android:layout_height="0dp">
+                <FrameLayout android:id="@+id/streetview_holder" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="7dp" android:layout_marginRight="7dp">
+                    <fragment android:name="com.google.android.gms.maps.SupportStreetViewPanoramaFragment" android:id="@+id/streetview" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                </FrameLayout>
+                <View android:id="@+id/viewNoPlotStreetView" android:background="@drawable/transparent" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="7dp" android:layout_marginRight="7dp"/>
+                <TextView android:textColor="@color/white70" android:gravity="center" android:id="@+id/tvNoPlotStreetView" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="22dp" android:layout_marginRight="22dp" android:text="@string/location_no_plot" android:layout_alignParentLeft="true" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <Button android:id="@+id/show_streetview_btn" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_show_streetview"/>
+            <RelativeLayout android:id="@+id/map_layout" android:layout_width="match_parent" android:layout_height="0dp">
+                <FrameLayout android:id="@+id/map_holder" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="7dp" android:layout_marginRight="7dp">
+                    <fragment android:id="@+id/map" android:layout_width="match_parent" android:layout_height="match_parent" class="com.google.android.gms.maps.SupportMapFragment"/>
+                </FrameLayout>
+                <View android:id="@+id/viewNoPlot" android:background="@drawable/transparent" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="7dp" android:layout_marginRight="7dp"/>
+                <TextView android:textColor="@color/white70" android:gravity="center" android:id="@+id/tvNoPlot" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="22dp" android:layout_marginRight="22dp" android:text="@string/location_no_plot" android:layout_alignParentLeft="true" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <Button android:id="@+id/show_map_btn" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_show_map"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

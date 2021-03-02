@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@drawable/list_item" android:paddingLeft="15dp" android:paddingTop="4dp" android:paddingRight="15dp" android:paddingBottom="4dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout android:id="@+id/account_layout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@+id/nav_icon" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <TextView android:id="@+id/line1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Line 1" android:layout_alignParentLeft="true" style="@style/Text.Large.Bold"/>
+        <TextView android:ellipsize="end" android:id="@+id/line2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Line 2" android:maxLines="1" android:layout_toLeftOf="@+id/line2_right" android:layout_below="@+id/line1" android:layout_alignBaseline="@+id/line2_right" android:layout_alignWithParentIfMissing="true" style="@style/Text.Medium.Grey"/>
+        <TextView android:ellipsize="end" android:id="@+id/line2_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Line 2R" android:maxLines="1" android:layout_below="@+id/line1" android:layout_alignParentRight="true" style="@style/Text.Large.Bold"/>
+    </RelativeLayout>
+    <ImageView android:id="@+id/nav_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:src="@drawable/arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+    <ImageView android:id="@+id/draghandle" android:padding="10dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_drag_handle_black_24dp" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+</RelativeLayout>

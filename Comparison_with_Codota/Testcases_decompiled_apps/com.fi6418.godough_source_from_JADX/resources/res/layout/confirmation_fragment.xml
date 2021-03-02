@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/button_bar">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:orientation="horizontal" android:id="@+id/title_zone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="15dp">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_checkmark_confirmation"/>
+                <TextView android:textColor="@color/green" android:gravity="center" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/Text.Large"/>
+            </RelativeLayout>
+            <View android:id="@+id/divider" android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1px" android:layout_marginBottom="10dp"/>
+            <LinearLayout android:orientation="vertical" android:id="@+id/content_frame" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_cancel" android:visibility="gone" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_cancel" app:buttonThemed="false"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_action" android:visibility="gone" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_ok" app:buttonThemed="true"/>
+    </LinearLayout>
+</RelativeLayout>

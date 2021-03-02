@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/velocity_layout" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textStyle="bold" android:gravity="center_horizontal" android:id="@+id/rda_limits_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:text="Asfjkh wekjfh adwkf aklsdkfh alidshf alsdfy a;lsdkfh lkdjshfas.kdufy hald.fkjhajfh ajldfkadfjkalifhakjjfjalskdfjhad.f a a;ldf a;ldskf a; dfg;alfghjal.dgh al.dgjh akg a;kldgh alsdkf askldf haldsfgkha.s,dfgh sdg.fk hadlkf.,haskdfhaldfg adlgf al;galgkjaldfgka gklahdsgfa sdkg lsg a;lsdgj al;g askgh al;gujas;ldi adslgkasgla sdla dsovkjadsoigf a;’jgfapofg al;ksjg aopsldjfkal;ifgu napl;jgasioigua ljskgls;I lasi fgjs;o fgna;sl jgkspmoigu ja;go luj gfaougljs dgliu;lfgjl z adfahkfg;als6fy alk. jpilkdsvdfg"/>
+        <TableLayout android:layout_gravity="center_horizontal" android:id="@+id/velocity_table" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:shrinkColumns="1,2">
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+                <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_daily_count"/>
+                <TextView android:textStyle="bold" android:ellipsize="end" android:id="@+id/daily_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rda_velocity_unavailable" android:singleLine="true"/>
+            </TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+                <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_daily_amount"/>
+                <TextView android:textStyle="bold" android:id="@+id/daily_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rda_velocity_unavailable"/>
+            </TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+                <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_monthly_count"/>
+                <TextView android:textStyle="bold" android:id="@+id/monthly_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rda_velocity_unavailable"/>
+            </TableRow>
+            <TableRow android:id="@+id/type_row" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+                <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/lbl_monthly_amount"/>
+                <TextView android:textStyle="bold" android:id="@+id/monthly_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rda_velocity_unavailable"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</merge>

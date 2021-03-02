@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <fragment android:id="@+id/dummy" android:layout_width="wrap_content" android:layout_height="wrap_content" class="com.jackhenry.godough.core.DummyFragment"/>
+    <AbsoluteLayout android:id="@+id/layout" android:background="@drawable/app_background_spalsh" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:id="@+id/logo" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/logo_large" android:scaleType="fitXY"/>
+    </AbsoluteLayout>
+    <ImageButton android:id="@+id/settings" android:background="@drawable/btn_standard" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:src="@drawable/settings" android:layout_alignParentTop="true" android:layout_alignParentRight="true"/>
+    <com.jackhenry.godough.core.widgets.ProgressBarIceCream android:id="@+id/progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="false" android:layout_centerInParent="true" style="@style/ProgressBar"/>
+    <LinearLayout android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="@dimen/buttonBarHeight" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <LinearLayout android:orientation="horizontal" android:id="@+id/buttons" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="10dp">
+            <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_location" android:visibility="gone" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_weight="1" app:buttonText="@string/btn_locations" app:buttonIcon="@drawable/btn_icon_target"/>
+            <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_login" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_weight="1" app:buttonText="@string/btn_login" app:buttonIcon="@drawable/btn_icon_key" app:buttonThemed="true"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="8dp" android:textColor="#fff" android:gravity="right" android:id="@+id/version" android:paddingRight="10dp" android:paddingBottom="2dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2.0.0" android:singleLine="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true"/>
+</RelativeLayout>

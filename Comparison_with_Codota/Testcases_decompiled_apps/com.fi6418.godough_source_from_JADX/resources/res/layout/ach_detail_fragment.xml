@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:id="@+id/form_panel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@+id/button_bar" android:layout_alignParentTop="true" style="@style/ScrollView">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:gravity="center" android:id="@+id/header" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Text.Large.Bold.ListHeader"/>
+            <RelativeLayout android:id="@+id/top_section" android:background="@drawable/list_item_shadow_overlay" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:gravity="center_vertical" android:id="@+id/company_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_alignTop="@+id/code" android:layout_alignBottom="@+id/code" style="@style/Text.Medium"/>
+                <TextView android:textColor="#ffffff" android:id="@+id/code" android:background="@drawable/ach_code_bkg" android:paddingLeft="6dp" android:paddingTop="2dp" android:paddingRight="6dp" android:paddingBottom="2dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8dp" android:layout_alignParentRight="true"/>
+                <View android:id="@+id/divider1" android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1px" android:layout_below="@+id/code"/>
+                <LinearLayout android:orientation="horizontal" android:id="@+id/debit_section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/divider1">
+                    <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="4dp" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                        <TextView android:id="@+id/debit_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Text.Medium.Bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbl_debit_caps" style="@style/Text.Small.Grey"/>
+                    </LinearLayout>
+                    <View android:id="@+id/divider" android:background="@color/divider" android:layout_width="1px" android:layout_height="match_parent"/>
+                    <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="4dp" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                        <TextView android:id="@+id/credit_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Text.Medium.Bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbl_credit_caps" style="@style/Text.Small.Grey"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:id="@+id/separator" android:background="@drawable/form_separator_large" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="-2dp" android:layout_marginRight="-2dp" android:layout_marginBottom="-2dp" android:layout_below="@+id/debit_section"/>
+            </RelativeLayout>
+            <RelativeLayout android:gravity="center_vertical" android:id="@+id/amount_section" android:background="@drawable/list_item_shadow_overlay" android:paddingLeft="15dp" android:paddingTop="8dp" android:paddingRight="15dp" android:paddingBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <CheckedTextView android:gravity="center_vertical" android:id="@+id/amount_label" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:checked="false" android:checkMark="@drawable/yes_no_checkbox" android:text="@string/lbl_reset_to_zero" style="@style/Text.Medium"/>
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/offset_section" android:background="@drawable/list_item" android:paddingLeft="15dp" android:paddingTop="8dp" android:paddingRight="15dp" android:paddingBottom="8dp" android:focusable="true" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@+id/arrow_button_offset" android:duplicateParentState="true" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/Arrow.Circled"/>
+                <TextView android:gravity="center_vertical" android:id="@+id/offset_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_offset_account" android:layout_toLeftOf="@+id/arrow_button_offset" style="@style/Text.Medium"/>
+                <TextView android:textColor="@color/tapTextViewColor" android:gravity="center_vertical" android:id="@+id/offset_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tap_select" android:layout_toLeftOf="@+id/arrow_button_offset" android:layout_below="@+id/offset_label" style="@style/Text.Large.Bold.Indented"/>
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/date_section" android:background="@drawable/list_item_last" android:paddingLeft="15dp" android:paddingTop="8dp" android:paddingRight="15dp" android:paddingBottom="20dp" android:focusable="true" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:gravity="center_vertical" android:id="@+id/date_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_effective_date" android:layout_toLeftOf="@+id/arrow_button_date" style="@style/Text.Medium"/>
+                <TextView android:textColor="@color/tapTextViewColor" android:gravity="center_vertical" android:id="@+id/date_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tap_select" android:layout_toLeftOf="@+id/arrow_button_date" android:layout_below="@+id/date_label" style="@style/Text.Large.Bold.Indented"/>
+                <ImageView android:id="@+id/arrow_button_date" android:duplicateParentState="true" android:layout_height="wrap_content" android:layout_alignTop="@+id/date_label" android:layout_alignBottom="@+id/date_value" android:layout_alignParentRight="true" style="@style/Arrow.Circled"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_cancel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_cancel" app:buttonIcon="@drawable/btn_icon_stop"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_action" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="0dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_initiate" app:buttonIcon="@drawable/btn_icon_checkmark" app:buttonEnabled="false" app:buttonThemed="true"/>
+    </LinearLayout>
+</RelativeLayout>

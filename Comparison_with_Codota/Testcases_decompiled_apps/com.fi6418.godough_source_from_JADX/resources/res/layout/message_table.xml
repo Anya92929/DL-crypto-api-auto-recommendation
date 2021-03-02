@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout android:background="@drawable/list_item_single_shadow_overlay" android:paddingLeft="15dp" android:paddingTop="15dp" android:paddingRight="15dp" android:paddingBottom="25dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/header">
+        <TextView android:gravity="center" android:id="@+id/message" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="6dp" android:layout_below="@+id/header" style="@style/Text.Medium.Bold"/>
+        <TableLayout android:id="@+id/table" android:layout_width="wrap_content" android:layout_height="wrap_content" android:shrinkColumns="1" android:layout_below="@+id/message" android:layout_centerHorizontal="true" android:layout_alignWithParentIfMissing="true"/>
+        <TextView android:gravity="center" android:id="@+id/message_bottom" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_below="@+id/table" android:layout_alignWithParentIfMissing="true" style="@style/Text.Small"/>
+    </RelativeLayout>
+</RelativeLayout>

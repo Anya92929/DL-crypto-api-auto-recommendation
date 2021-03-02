@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/about_static_content" android:paddingTop="40dp" android:paddingBottom="40dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:gravity="center_horizontal" android:id="@+id/about_app_name" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Text.Large"/>
+        <TextView android:gravity="center_horizontal" android:id="@+id/about_fi_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fi_name" style="@style/Text.Medium"/>
+        <TextView android:gravity="center_horizontal" android:id="@+id/about_version" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Text.Medium"/>
+    </LinearLayout>
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@+id/content_divider" android:background="@color/divider" android:visibility="visible" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="10dp" android:layout_marginTop="3dp" android:layout_marginRight="10dp" android:layout_marginBottom="3dp" android:layout_below="@+id/about_static_content"/>
+    <ListView android:id="@+id/list" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:divider="@color/divider" android:dividerHeight="1dp" android:layout_below="@+id/content_divider" style="@style/ListView"/>
+</RelativeLayout>

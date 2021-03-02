@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:id="@+id/balance_holder" android:background="@drawable/list_item_first_shadow_overlay_account_transaction_pressed_left" android:layout_width="@dimen/max_balance_width" android:layout_height="match_parent">
+        <RelativeLayout android:id="@+id/current_balance_layout" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18sp" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@+id/current_balance" android:paddingLeft="15dp" android:paddingTop="15dp" android:paddingRight="15dp" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Text.Large.Bold"/>
+            <TextView android:textColor="#636363" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@+id/current_balance_label" android:paddingLeft="15dp" android:paddingRight="15dp" android:paddingBottom="15dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/lbl_current_balance" android:layout_below="@+id/current_balance" style="@style/Text.Small"/>
+            <TextView android:id="@+id/balance_divider" android:background="#d9d9d9" android:visibility="visible" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_below="@+id/current_balance_label"/>
+        </RelativeLayout>
+        <RelativeLayout android:orientation="vertical" android:id="@+id/available_balance_layout" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/current_balance_layout">
+            <TextView android:textSize="18sp" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@+id/available_balance" android:paddingLeft="15dp" android:paddingTop="15dp" android:paddingRight="15dp" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Text.Large.Bold"/>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/available_balance_holder" android:paddingLeft="@dimen/avail_balance_holder_padding" android:paddingRight="@dimen/avail_balance_holder_padding" android:paddingBottom="@dimen/avail_balance_holder_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_below="@+id/available_balance" android:layout_centerInParent="true">
+                <TextView android:textColor="#636363" android:gravity="center" android:id="@+id/available_balance_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbl_available_balance" style="@style/Text.Small"/>
+                <ImageView android:gravity="center" android:id="@+id/balance_info_icon" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="@dimen/info_icon_margin" android:src="@drawable/ic_info_small"/>
+            </LinearLayout>
+            <TextView android:background="#d9d9d9" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_below="@+id/available_balance_holder"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/transaction_holder" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@+id/balance_holder" android:layout_alignParentRight="true">
+        <TextView android:textColor="#333333" android:gravity="center" android:id="@+id/lbl_transactions" android:background="@drawable/list_item_first_shadow_overlay_disabled" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/act_trans_section_header" style="@style/Text.Medium"/>
+        <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="match_parent" style="@style/ListView"/>
+        <TextView android:gravity="center" android:id="@android:id/empty" android:background="@drawable/list_item_last_shadow_overlay" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/act_trans_empty_msg"/>
+    </LinearLayout>
+</RelativeLayout>

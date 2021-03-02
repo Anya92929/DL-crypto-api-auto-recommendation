@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@drawable/app_background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/button_bar" android:layout_alignParentTop="true" style="@style/ListView"/>
+    <TextView android:gravity="center" android:id="@android:id/empty" android:background="@drawable/list_item_single_shadow_overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/act_empty_msg"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/button_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/ButtonBar.Bottom">
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_cancel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_cancel" app:buttonIcon="@drawable/btn_icon_stop"/>
+        <com.jackhenry.godough.core.widgets.ActionButton android:id="@+id/btn_continue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="0dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_weight="1" app:buttonText="@string/btn_continue" app:buttonIcon="@drawable/btn_icon_checkmark" app:buttonEnabled="false" app:buttonThemed="true"/>
+    </LinearLayout>
+</RelativeLayout>
