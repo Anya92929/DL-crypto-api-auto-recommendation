@@ -11,10 +11,9 @@ The directory Graph_reconstruct includes the program to reconstruct the API depe
 The directory deep_Learning_experiments includes our code for API recommendtation training and testing, as well as extensive comparisons with intermediate baselines.  
 
 ## Comparison with Codota
-We compare our approach with the state-of-the-art code completion plugin Codota. We manually collect 245 test cases by decompiling 9 Android apps and locating the cryptographic API method invocations in the codebase. The decompiled java source code can be found [here](https://github.com/Anya92929/DL-crypto-api-auto-recommendation/tree/main/Comparison_with_Codota)
-The test cases can be found by searching the keywords "CRYPTOGRAPHIC API CALLSITE". 
+We compare our approach with the state-of-the-art code completion plugin Codota. We manually collect 245 test cases by decompiling 9 Android apps and locating the cryptographic API method invocations in the codebase. The decompiled java source code can be found [here](https://github.com/Anya92929/DL-crypto-api-auto-recommendation/tree/main/Comparison_with_Codota). We marked each test case location with the note "CRYPTOGRAPHIC API CALLSITE xx" so that the test case can be located by searching the keywords "CRYPTOGRAPHIC API CALLSITE". 
 
-An example is as follows:
+An example of the cryptographic API method call in the codebase is as follows:
 
 <img src="Comparison_with_Codota/testcase_example.png" alt="example" width="600"/>
 
