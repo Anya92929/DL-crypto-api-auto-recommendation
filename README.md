@@ -3,7 +3,6 @@
 It includes:
 * The original Android apps that are used as data source.
 * The program analysis context (program slices, API dependence graphs) of each Java Cryptographic API method invoation extracted from the Android apps. 
-* The API dependence graphs that are built on top of each program slice.
 * The code to extract program analysis context for each API method call
 * The code for training our Multi-HyLSTM
 
