@@ -8,10 +8,21 @@ It includes:
 
 ## Program Analysis Part
 
-### Interprocedural Backward slicing
-The directory CryptoSlicer includes the code to extract program slices from Android Apps by inter-procedural backward slicing. 
+### CryptoSlicer: Interprocedural Backward slicing
+It is a slicing program to extract interprocedural program slices for Java Cryptographic APIs from Android Apps.
+#### Running with Command:
+* Run CryptoSlicer on an app using the command:
 
-### API dependence graph build and path extraction
+`java -jar ../CryptoSlicer.jar "app_name" "./output_dir/"`
+
+#### Prerequisites (Environment Variables)
+1. `JAVA_HOME`: Point to a valid Java 8 JDK Installation
+2. `ANDROID_SDK_HOME`: Point to a valid Android JDK Installation
+
+
+
+
+### APIDepG: API dependence graph build and path extraction
 The directory Graph_reconstruct includes the program to reconstruct the API dependence graph and extract paths. 
 
 ## Deep Learning Part
