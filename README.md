@@ -13,7 +13,10 @@ It is a slicing program to extract interprocedural program slices for Java Crypt
 #### Running with Command:
 * Run CryptoSlicer on an app using the command:
 
-`java -jar ../CryptoSlicer.jar "app_name" "./output_dir/"`
+`java -jar CryptoSlicer.jar "app_name" "./output_dir_CryptoSlicer/"`
+Run this command interatively on all the apps. The output includes:
+* Slice.txt: A file includes the extracted slices of all the scanned apps.
+* {app_name}_graph.txt: A file for each scanned app. It includes the information needed to build API dependence graphs for this app. 
 
 #### Prerequisites (Environment Variables)
 1. `JAVA_HOME`: Point to a valid Java 8 JDK Installation
@@ -23,7 +26,21 @@ It is a slicing program to extract interprocedural program slices for Java Crypt
 
 
 ### APIDepG: API dependence graph build and path extraction
-The directory Graph_reconstruct includes the program to reconstruct the API dependence graph and extract paths. 
+It builds the API dependence graph on top of the program slices. 
+* Build API dependence graph with the command:
+`python3 APIDepG/Graph_backward.py --data_dir "output_dir" --file {app_name}_graph.txt --vocab_dir "./APIDepG/Vocabulary.csv"`
+Iterate this command on all the output files from the CryptoSlicer:
+
+    FILES=output_dir_CryptoSlicer/*_graph.txt
+    for f in $FILES
+    do
+        echo "Processing $f..."
+        output=${f##*/}
+        python3 APIDepG/Graph_backward.py --data_dir 'output_dir_paths' --file $f --vocab_dir './APIDepG/Vocabulary.csv'
+    done
+
+ Output:
+* 'dataflow_paths.csv': A file includes the single paths of all the apps.
 
 ## Deep Learning Part
 ### Deep learning experiments including embedding training, API recommendation
