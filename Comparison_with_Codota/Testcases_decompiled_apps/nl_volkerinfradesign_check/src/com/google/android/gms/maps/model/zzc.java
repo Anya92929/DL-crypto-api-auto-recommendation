@@ -1,0 +1,102 @@
+package com.google.android.gms.maps.model;
+
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.zza;
+import com.google.android.gms.common.internal.safeparcel.zzb;
+
+public class zzc implements Parcelable.Creator<GroundOverlayOptions> {
+    /* renamed from: a */
+    static void m4215a(GroundOverlayOptions groundOverlayOptions, Parcel parcel, int i) {
+        int zzav = zzb.zzav(parcel);
+        zzb.zzc(parcel, 1, groundOverlayOptions.mo6750b());
+        zzb.zza(parcel, 2, groundOverlayOptions.mo6748a(), false);
+        zzb.zza(parcel, 3, (Parcelable) groundOverlayOptions.getLocation(), i, false);
+        zzb.zza(parcel, 4, groundOverlayOptions.getWidth());
+        zzb.zza(parcel, 5, groundOverlayOptions.getHeight());
+        zzb.zza(parcel, 6, (Parcelable) groundOverlayOptions.getBounds(), i, false);
+        zzb.zza(parcel, 7, groundOverlayOptions.getBearing());
+        zzb.zza(parcel, 8, groundOverlayOptions.getZIndex());
+        zzb.zza(parcel, 9, groundOverlayOptions.isVisible());
+        zzb.zza(parcel, 10, groundOverlayOptions.getTransparency());
+        zzb.zza(parcel, 11, groundOverlayOptions.getAnchorU());
+        zzb.zza(parcel, 12, groundOverlayOptions.getAnchorV());
+        zzb.zza(parcel, 13, groundOverlayOptions.isClickable());
+        zzb.zzI(parcel, zzav);
+    }
+
+    /* renamed from: zzfx */
+    public GroundOverlayOptions createFromParcel(Parcel parcel) {
+        int zzau = zza.zzau(parcel);
+        int i = 0;
+        IBinder iBinder = null;
+        LatLng latLng = null;
+        float f = BitmapDescriptorFactory.HUE_RED;
+        float f2 = BitmapDescriptorFactory.HUE_RED;
+        LatLngBounds latLngBounds = null;
+        float f3 = BitmapDescriptorFactory.HUE_RED;
+        float f4 = BitmapDescriptorFactory.HUE_RED;
+        boolean z = false;
+        float f5 = BitmapDescriptorFactory.HUE_RED;
+        float f6 = BitmapDescriptorFactory.HUE_RED;
+        float f7 = BitmapDescriptorFactory.HUE_RED;
+        boolean z2 = false;
+        while (parcel.dataPosition() < zzau) {
+            int zzat = zza.zzat(parcel);
+            switch (zza.zzca(zzat)) {
+                case 1:
+                    i = zza.zzg(parcel, zzat);
+                    break;
+                case 2:
+                    iBinder = zza.zzq(parcel, zzat);
+                    break;
+                case 3:
+                    latLng = (LatLng) zza.zza(parcel, zzat, LatLng.CREATOR);
+                    break;
+                case 4:
+                    f = zza.zzl(parcel, zzat);
+                    break;
+                case 5:
+                    f2 = zza.zzl(parcel, zzat);
+                    break;
+                case 6:
+                    latLngBounds = (LatLngBounds) zza.zza(parcel, zzat, LatLngBounds.CREATOR);
+                    break;
+                case 7:
+                    f3 = zza.zzl(parcel, zzat);
+                    break;
+                case 8:
+                    f4 = zza.zzl(parcel, zzat);
+                    break;
+                case 9:
+                    z = zza.zzc(parcel, zzat);
+                    break;
+                case 10:
+                    f5 = zza.zzl(parcel, zzat);
+                    break;
+                case 11:
+                    f6 = zza.zzl(parcel, zzat);
+                    break;
+                case 12:
+                    f7 = zza.zzl(parcel, zzat);
+                    break;
+                case 13:
+                    z2 = zza.zzc(parcel, zzat);
+                    break;
+                default:
+                    zza.zzb(parcel, zzat);
+                    break;
+            }
+        }
+        if (parcel.dataPosition() == zzau) {
+            return new GroundOverlayOptions(i, iBinder, latLng, f, f2, latLngBounds, f3, f4, z, f5, f6, f7, z2);
+        }
+        throw new zza.C2021zza("Overread allowed size end=" + zzau, parcel);
+    }
+
+    /* renamed from: zzil */
+    public GroundOverlayOptions[] newArray(int i) {
+        return new GroundOverlayOptions[i];
+    }
+}

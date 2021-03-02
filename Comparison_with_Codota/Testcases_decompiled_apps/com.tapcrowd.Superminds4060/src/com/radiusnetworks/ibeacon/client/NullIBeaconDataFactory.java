@@ -1,0 +1,16 @@
+package com.radiusnetworks.ibeacon.client;
+
+import android.os.Handler;
+import com.radiusnetworks.ibeacon.IBeacon;
+import com.radiusnetworks.ibeacon.IBeaconData;
+import com.radiusnetworks.ibeacon.IBeaconDataNotifier;
+
+public class NullIBeaconDataFactory implements IBeaconDataFactory {
+    public void requestIBeaconData(IBeacon iBeacon, final IBeaconDataNotifier notifier) {
+        new Handler().post(new Runnable() {
+            public void run() {
+                notifier.iBeaconDataUpdate((IBeacon) null, (IBeaconData) null, new DataProviderException("Please upgrade to the Pro version of the Android iBeacon Library."));
+            }
+        });
+    }
+}
