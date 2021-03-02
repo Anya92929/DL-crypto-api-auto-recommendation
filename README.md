@@ -10,11 +10,11 @@ It includes:
 
 ### CryptoSlicer: Interprocedural Backward slicing
 It is a slicing program to extract interprocedural program slices for Java Cryptographic APIs from Android Apps.
-#### Running with Command:
-* Run CryptoSlicer on an app using the command:
+#### Running CryptoSlicer with Command:
+Run `java -jar CryptoSlicer.jar "app_name" "./output_dir_CryptoSlicer/"`
+interatively on all the apps. 
 
-`java -jar CryptoSlicer.jar "app_name" "./output_dir_CryptoSlicer/"`
-Run this command interatively on all the apps. The output includes:
+#### Outputs:
 * Slice.txt: A file includes the extracted slices of all the scanned apps.
 * {app_name}_graph.txt: A file for each scanned app. It includes the information needed to build API dependence graphs for this app. 
 
@@ -27,9 +27,12 @@ Run this command interatively on all the apps. The output includes:
 
 ### APIDepG: API dependence graph build and path extraction
 It builds the API dependence graph on top of the program slices. 
-* Build API dependence graph with the command:
+#### Running APIDepG with Command:
+* Run 
 `python3 APIDepG/Graph_backward.py --data_dir "output_dir" --file {app_name}_graph.txt --vocab_dir "./APIDepG/Vocabulary.csv"`
-Iterate this command on all the output files from the CryptoSlicer:
+iterately on all the output {app_name}_graph.txt files from the CryptoSlicer.
+
+A script to do that:
 
     FILES=output_dir_CryptoSlicer/*_graph.txt
     for f in $FILES
@@ -39,7 +42,7 @@ Iterate this command on all the output files from the CryptoSlicer:
         python3 APIDepG/Graph_backward.py --data_dir 'output_dir_paths' --file $f --vocab_dir './APIDepG/Vocabulary.csv'
     done
 
- Output:
+#### Outputs:
 * 'dataflow_paths.csv': A file includes the single paths of all the apps.
 
 ## Deep Learning Part
