@@ -48,9 +48,10 @@ A script to do that:
 ## Deep Learning Part
 ### API and Constant Embedding
 We embed the APIs and associated constants as vectors by applying skip-gram model on the extracted dependence paths.
-#### Train Embedding with command:
 
-* Run `python3 get_neighbor_pairs.py dependence_path_file.csv neighbor_pairs.csv 1` to extract neighbor pairs of API methods and constants.
+* Extract neighbor pairs of API methods and constants from sequences (dependence paths) 
+
+`python3 get_neighbor_pairs.py dependence_path_file.csv neighbor_pairs.csv 1` 
 
 * Run command for embedding:
 ```
@@ -61,26 +62,39 @@ python3 embedding_from_pairs.py --training-set-folder 'path/to/neighbor_pairs'
                                 --epoch 100 
                                 --batch-size 1024
 ```
-### Multi-HyLSTM Training and Evaluation
-#### Train and test Multi-HyLSTM with command
+### Single-path Pretraining (HyLSTM):
+Pretrain HyLSTM model with all the single-path data:
+```
+python3 hylstm_path_pretraining.py --logfile 'log.txt'
+                                   --output_dir 'save_dir'
+                                   --embedding_checkpoint_dir 'dir/to/dep2vec'
+                                   --embedding_checkpoint 'dep2vec'
+                                   --data_dir 'dir/to/training/data'
+                                   --pretraining_data ''
+                                   --epoch 10
+                                   --batch_size 1024
+                                   --save_checkpoint 'pretrained_hylstm'
+
+```
+
+### Multi-path API Recommendation (Multi-HyLSTM)
 * Split data as train.csv and test.csv
-* Model training and testing
 
-
-#### Run command to train Multi-HyLSTM
-    python3 Multi-HyLSTM_train.py --output_path 'save_dir'
-                                  --logfile 'log_multi_HyLSTM.txt'
-                                  --save_checkpoint 'save_multi_hylstm'
-                                  --embedding_checkpoint_path 'dir/to/dep2vec'
-                                  --embedding_checkpoint 'dep2vec'
-                                  --path_checkpoint_path 'dir/to/path/pretraining'
-                                  --path_checkpoint 'pretrained_hylstm'
-                                  --data_path 'dir/to/training/data'
-                                  --test_data 'test.csv'
-                                  --train_data 'train.csv'
-                                  --epoch 10
-                                  --batch_size 1024
-
+* API Recommendation Model Training and Testing
+```
+python3 Multi-HyLSTM_train.py --output_path 'save_dir'
+                              --logfile 'log_multi_HyLSTM.txt'
+                              --save_checkpoint 'save_multi_hylstm'
+                              --embedding_checkpoint_path 'dir/to/dep2vec'
+                              --embedding_checkpoint 'dep2vec'
+                              --path_checkpoint_path 'dir/to/path/pretraining'
+                              --path_checkpoint 'pretrained_hylstm'
+                              --data_path 'dir/to/training/data'
+                              --test_data 'test.csv'
+                              --train_data 'train.csv'
+                              --epoch 10
+                              --batch_size 1024
+```
 
 
 
