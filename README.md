@@ -29,7 +29,7 @@ interatively on all the apps.
 It builds the API dependence graph on top of the program slices. 
 #### Running APIDepG with Command:
 * Run 
-`python3 APIDepG/Graph_backward.py --data_dir "output_dir" --file {app_name}_graph.txt --vocab_dir "./APIDepG/Vocabulary.csv"`
+`python3 APIDepG/Graph_backward.py --data_dir "output_dir" --file {app_name}_graph.txt --vocab_dir "./Data/Vocabulary/Vocabulary.csv"`
 iterately on all the output {app_name}_graph.txt files from the CryptoSlicer.
 
 A script to do that:
@@ -52,7 +52,7 @@ We embed the APIs and associated constants as vectors by applying skip-gram mode
 
 * Run `python3 get_neighbor_pairs.py dependence_path_file.csv neighbor_pairs.csv 1` to extract neighbor pairs of API methods and constants.
 
-* Run 
+* Run command for embedding:
 ```
 python3 embedding_from_pairs.py --training-set-folder 'path/to/neighbor_pairs' 
                                 --neighbor-pair-file 'neighbor_pairs.csv' 
@@ -63,8 +63,7 @@ python3 embedding_from_pairs.py --training-set-folder 'path/to/neighbor_pairs'
 ```
 ### Multi-HyLSTM Training and Evaluation
 
-### Deep learning experiments including embedding training, API recommendation
-The directory deep_Learning_experiments includes our code for API recommendtation training and testing, as well as extensive comparisons with intermediate baselines.  
+
 
 ## Comparison with Codota
 We compare our approach with the state-of-the-art code completion plugin Codota. We manually collect 245 test cases by decompiling 9 Android apps and locating the cryptographic API method invocations in the codebase. The decompiled java source code can be found [here](https://github.com/Anya92929/DL-crypto-api-auto-recommendation/tree/main/Comparison_with_Codota). We marked each test case location with the note "CRYPTOGRAPHIC API CALLSITE xx" so that the test case can be located by searching the keywords "CRYPTOGRAPHIC API CALLSITE". 
@@ -74,4 +73,9 @@ An example of the cryptographic API method call in the codebase is as follows:
 <img src="Comparison_with_Codota/testcase_example.png" alt="example" width="600"/>
 
 ## Data
-The data is [here](https://drive.google.com/drive/folders/1fc3A3ORcVJUDcPsH2jVHadpgTkbTs8nt?usp=sharing) (preserves viewer anonymity).
+Due to the storage limit, we only show part of the data here. The full data can be found at [here](https://drive.google.com/drive/folders/1fc3A3ORcVJUDcPsH2jVHadpgTkbTs8nt?usp=sharing) (preserves viewer anonymity).
+Our data includes:
+* Android apps (byte code)
+* Program-analysis Context
+   * Slices
+   * Dependence Paths
