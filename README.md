@@ -54,12 +54,12 @@ We embed the APIs and associated constants as vectors by applying skip-gram mode
 
 * Run 
 ```
-    python3 embedding_from_pairs.py --training-set-folder 'path/to/neighbor_pairs' 
-            --neighbor-pair-file 'neighbor_pairs.csv' 
-            --embedding-save-path 'embedding_output_dir' 
-            --embedding-name 'dep2vec' 
-            --epoch 100 
-            --batch-size 1024
+python3 embedding_from_pairs.py --training-set-folder 'path/to/neighbor_pairs' 
+                                --neighbor-pair-file 'neighbor_pairs.csv' 
+                                --embedding-save-path 'embedding_output_dir' 
+                                --embedding-name 'dep2vec' 
+                                --epoch 100 
+                                --batch-size 1024
 ```
 ### Multi-HyLSTM Training and Evaluation
 
