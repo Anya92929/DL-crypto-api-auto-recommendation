@@ -1,10 +1,10 @@
 # DL-crypto-api-auto-recommendation
 ## An open-sourced work for deep learning based cryptographic API recommendation solution.
 It includes:
-* The code to extract program analysis context for each API method call
-* The code for training our Multi-HyLSTM
-* The original Android apps that are used as data source.
-* The program analysis context (program slices, API dependence graphs) of each Java Cryptographic API method invoation extracted from the Android apps. 
+* The code to extract program analysis context for each API method call (Program Analysis Part)
+* The code for training our Multi-HyLSTM (Deep Learning Part)
+* The Android apps that are used as data source. (Original Data)
+* The program analysis context (program slices, API dependence graphs) of each Java Cryptographic API method invoation extracted from the Android apps. (Preprocessed Data)
 
 ## Program Analysis Part
 
