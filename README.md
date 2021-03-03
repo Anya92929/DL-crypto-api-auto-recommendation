@@ -1,10 +1,10 @@
 # DL-crypto-api-auto-recommendation
 ## An open-sourced work for deep learning based cryptographic API recommendation solution.
 It includes:
-* The original Android apps that are used as data source.
-* The program analysis context (program slices, API dependence graphs) of each Java Cryptographic API method invoation extracted from the Android apps. 
 * The code to extract program analysis context for each API method call
 * The code for training our Multi-HyLSTM
+* The original Android apps that are used as data source.
+* The program analysis context (program slices, API dependence graphs) of each Java Cryptographic API method invoation extracted from the Android apps. 
 
 ## Program Analysis Part
 
@@ -43,9 +43,25 @@ A script to do that:
     done
 
 #### Outputs:
-* 'dataflow_paths.csv': A file includes the single paths of all the apps.
+* `dataflow_paths.csv`: A file includes the single paths of all the apps.
 
 ## Deep Learning Part
+### API and Constant Embedding
+We embed the APIs and associated constants as vectors by applying skip-gram model on the extracted dependence paths.
+#### Train Embedding with command:
+
+* Run `python3 get_neighbor_pairs.py dependence_path_file.csv neighbor_pairs.csv 1` to extract neighbor pairs of API methods and constants.
+
+* Run 
+    python3 embedding_from_pairs.py --training-set-folder 'path/to/neighbor_pairs' 
+        --neighbor-pair-file 'neighbor_pairs.csv' 
+        --embedding-save-path 'embedding_output_dir' 
+        --embedding-name 'dep2vec' 
+        --epoch 100 
+        --batch-size 1024
+
+### Multi-HyLSTM Training and Evaluation
+
 ### Deep learning experiments including embedding training, API recommendation
 The directory deep_Learning_experiments includes our code for API recommendtation training and testing, as well as extensive comparisons with intermediate baselines.  
 
