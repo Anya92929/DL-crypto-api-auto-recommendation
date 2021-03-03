@@ -53,6 +53,7 @@ We embed the APIs and associated constants as vectors by applying skip-gram mode
 * Run `python3 get_neighbor_pairs.py dependence_path_file.csv neighbor_pairs.csv 1` to extract neighbor pairs of API methods and constants.
 
 * Run 
+
     python3 embedding_from_pairs.py --training-set-folder 'path/to/neighbor_pairs' 
         --neighbor-pair-file 'neighbor_pairs.csv' 
         --embedding-save-path 'embedding_output_dir' 
