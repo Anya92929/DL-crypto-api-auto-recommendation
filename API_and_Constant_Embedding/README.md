@@ -7,6 +7,7 @@ We train dep2vec by applying skip-gram on the extracted dependence paths from AP
 ### Comparison Setting
 To compare the program analysis design choices, we compare several settings.
 
-|---------------|-----------------|------------|-----------|
+
 |Embedding Name | Dep2vec         | Slice2vec  |  Byte2vec |
+|---------------|-----------------|------------|-----------|
 |Sequences      | Dependence paths| Slices     |  Byte code|
