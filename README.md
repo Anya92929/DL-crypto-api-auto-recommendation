@@ -11,8 +11,8 @@ It includes:
 ### CryptoSlicer: Interprocedural Backward slicing
 It is a slicing program to extract interprocedural program slices for Java Cryptographic APIs from Android Apps.
 #### Running CryptoSlicer with Command:
-Run `java -jar CryptoSlicer.jar "app_name" "./output_dir_CryptoSlicer/"`
-interatively on all the apps. 
+Run CryptoSlicer interatively on all apps through command: `java -jar CryptoSlicer.jar "app_name" "./output_dir_CryptoSlicer/"`
+
 
 #### Outputs:
 * Slice.txt: A file includes the extracted slices of all the scanned apps.
@@ -28,9 +28,9 @@ interatively on all the apps.
 ### APIDepG: API dependence graph build and path extraction
 It builds the API dependence graph on top of the program slices. 
 #### Running APIDepG with Command:
-* Run 
+* Run APIDepG interately on all the output  {app_name}_graph.txt files from the CryptoSlicer through command:
 `python3 APIDepG/Graph_backward.py --data_dir "output_dir" --file {app_name}_graph.txt --vocab_dir "./Data/Vocabulary/Vocabulary.csv"`
-iterately on all the output {app_name}_graph.txt files from the CryptoSlicer.
+
 
 A script to do that:
 
@@ -62,6 +62,26 @@ python3 embedding_from_pairs.py --training-set-folder 'path/to/neighbor_pairs'
                                 --batch-size 1024
 ```
 ### Multi-HyLSTM Training and Evaluation
+#### Train and test Multi-HyLSTM with command
+* Split data as train.csv and test.csv
+* Model training and testing
+
+
+#### Run command to train Multi-HyLSTM
+    python3 Multi-HyLSTM_train.py --output_path 'save_dir'
+                                  --logfile 'log_multi_HyLSTM.txt'
+                                  --save_checkpoint 'save_multi_hylstm'
+                                  --embedding_checkpoint_path 'dir/to/dep2vec'
+                                  --embedding_checkpoint 'dep2vec'
+                                  --path_checkpoint_path 'dir/to/path/pretraining'
+                                  --path_checkpoint 'pretrained_hylstm'
+                                  --data_path 'dir/to/training/data'
+                                  --test_data 'test.csv'
+                                  --train_data 'train.csv'
+                                  --epoch 10
+                                  --batch_size 1024
+
+
 
 
 
