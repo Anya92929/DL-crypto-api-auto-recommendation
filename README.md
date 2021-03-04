@@ -45,7 +45,7 @@ A script to do that:
 #### Outputs:
 * `dataflow_paths.csv`: A file includes the single paths of all the apps.
 
-## Deep Learning Part
+## Neural Network Part
 ### API and Constant Embedding
 We embed the APIs and associated constants as vectors by applying skip-gram model on the extracted dependence paths.
 
