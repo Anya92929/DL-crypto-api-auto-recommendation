@@ -109,8 +109,8 @@ An example of the cryptographic API method call in the codebase is as follows:
 ## Data
 Due to the storage limit, we only give a data sample (small part of the data) here. The full data can be found at [here](https://drive.google.com/drive/folders/1fc3A3ORcVJUDcPsH2jVHadpgTkbTs8nt?usp=sharing) (preserves viewer anonymity).
 Our data includes:
-* Android apps (byte code)
+* Some sample Android apps
 * Program-analysis Context
-   * Slices
+   * Slices 
    * Dependence Paths
    * Multi-path Combinations
