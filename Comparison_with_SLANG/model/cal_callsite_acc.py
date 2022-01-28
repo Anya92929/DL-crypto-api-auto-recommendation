@@ -3,6 +3,7 @@ import argparse
 import csv
 import numpy as np
 
+'''Calculate accuracy'''
 parser = argparse.ArgumentParser()
 parser.add_argument('--answer_file',dest='answer_file',type=str)
 parser.add_argument('--vocab_file',dest='vocab_file',type=str)

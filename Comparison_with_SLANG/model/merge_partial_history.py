@@ -7,8 +7,8 @@ import argparse
 # we can read chunk by chunk and use df.groupby(['app','callsite']).mean(), however, not sure the complexity of groupby
 # deal with it line by line
 parser = argparse.ArgumentParser()
-parser.add_argument('--prob_file',dest='prob_file',type=str)
-parser.add_argument('--answer_file',dest='answer_file',type=str)
+parser.add_argument('--prob_file',dest='prob_file',type=str)  # input file
+parser.add_argument('--answer_file',dest='answer_file',type=str) # output file
 
 args = parser.parse_args()
 prob_file = args.prob_file
