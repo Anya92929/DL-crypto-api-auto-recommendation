@@ -108,18 +108,23 @@ An example of the cryptographic API method call in the codebase is as follows:
 We reproduce the preprocessing and model used by SLANG. 
 
 Enter the directory `Comparison_with_SLANG` : 
+
 `cd Comparison_with_SLANG`
 
 
 ### SLANG preprocessing
 Enter the directory `Comparison_with_SLANG/preprocessing` : 
+
 `cd preprocessing`
 
-#### Extract the partial object histories from Android Apps
+**Step 1: Extract the partial object histories from Android Apps**
+
 Run the following command to perform SLANG's preprocessing on Android Apps:
+
 `java -jar ObjectHistoryExtractor.jar 'path/to/app' './preprocessing_output/' `
 
-##### Outputs:
+**Outputs**:   
+
 * History.txt: A file includes the extracted partial object histories from Android Apps.
 
 To scanning more Apps, put the paths to the Apps in a file (Apps.txt), use this script:
@@ -137,11 +142,11 @@ do
 done <"$file"
 ```
 
-##### Prerequisites (Environment Variables)
+**Prerequisites (Environment Variables)**  
 1. `JAVA_HOME`: Point to a valid Java 8 JDK Installation
 2. `ANDROID_SDK_HOME`: Point to a valid Android JDK Installation
 
-#### Parse extracted partial histories to generate the data
+**Step 2: Parse extracted partial histories to generate the data**    
 ```
 python3 DatasetMaker.py --raw_data './preprocessing_output/Histories.txt' 
                         --vocabulary '../../Data/Vocabulary/Vocabulary.csv' --data_save_dir 'preprocessing_output/'
@@ -150,7 +155,7 @@ python3 DatasetMaker.py --raw_data './preprocessing_output/Histories.txt'
 ##### Output: 
 * Partial_history_int.csv: A file includes all the partial object histories extracted from the Android Apps. A partial object history is a sequence of API method calls associated with an object that happens in temprary order. 
 
-#### Split training and testing data
+**Step 3: Split training and testing data**     
 ```
 # split partial_history_int.csv into train.csv and test.csv
 python3 split_train_test_via_callsite.py --data_save_dir './preprocessing_output/'
@@ -163,7 +168,7 @@ SLANG includes two models, RNN and n-gram. The output probabilities of the two m
 Direct to directory `Comparison_with_SLANG/model`:
 `cd ../model`
 
-#### Train RNN on Partial Histroies
+**Step 1:  Train RNN on Partial Histroies**     
 SLANG trains a RNN model on obtained partial histories.  
 Run the following command:
 ```
@@ -180,7 +185,7 @@ python3 slang_rnn_tf.py --logfile 'log.txt'
 ```
 
 
-#### Build N-gram model on Partail Histories
+**Step 2: Build N-gram model on Partail Histories**     
 SLANG builds n-gram model on the obtained partial histories.  
 Run the following command:
 ```
@@ -191,7 +196,7 @@ python3 N-gram_model.py --train-data 'path/to/training/data/train.csv'
                         --output_dir 'path/to/output/'
 ```
 
-#### Merge probabilities from two models
+**Step 3: Merge probabilities from two models**
 The output probabilities from RNN and N-gram are combined to get the overall probability given each partial history.  
 Run the following command:
 ```
@@ -202,7 +207,8 @@ python3 merge_rnn_ngram.py --rnn_prob 'path/to/rnn_output/rnn_prob.csv'
 
 ```
 
-#### Merge probabilities for partial histories
+**Step 4: Merge probabilities for partial histories**  
+
 To generate API completion, SLANG combines several partial histories to genrate an optimal answer.  
 Run the following command:
 ```
@@ -211,7 +217,7 @@ python3 merge_partial_history.py --prob_file 'merged_rnn_ngram_prob.csv'
                                 --answer_file 'callsite_answer.csv' # generated anwser
 ```
 
-#### Calculate the accuracy based on generated answer
+**Step 5: Calculate the accuracy based on generated answer**
 ```
 python3 cal_callsite_acc.py --answer_file 'callsite_answer.csv' 
                             --vocab_file '../../Data/Vocabulary/Vocabulary.csv' 
